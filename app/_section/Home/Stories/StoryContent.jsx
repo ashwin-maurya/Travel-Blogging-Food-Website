@@ -3,6 +3,8 @@
 import React, { useRef, useState, lazy, Suspense } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+
+import Link from "next/link";
 const LazyStoryModal = lazy(() => import("../../Story/StoryModal"));
 // import { stories } from "@/app/_components/constants/constants";
 
@@ -49,10 +51,10 @@ export default function StoryContent({ stories }) {
               Spotlight
             </h1>
             {stories?.map((story, index) => (
-              <div
+              <Link
+                href={`/story/${story._id}`}
                 key={index}
                 className="relative flex min-w-[250px] 2xl:min-w-[300px] h-[400px] w-full 2xl:max-w-[300px] max-w-[250px] cursor-pointer items-end justify-start bg-gray-500 bg-cover bg-center text-left max-md:h-[350px] max-md:min-w-[250px] 2xl:h-[500px]"
-                onClick={() => openStoryPage(story._id)}
                 style={{
                   backgroundImage: `url("${story.imageUrl}")`,
                 }}
@@ -68,7 +70,7 @@ export default function StoryContent({ stories }) {
                     {story.title}
                   </span>
                 </h2>
-              </div>
+              </Link>
             ))}
             <h1
               className="mx-10 h-full cursor-pointer text-center font-CooperHewitt text-4xl uppercase"

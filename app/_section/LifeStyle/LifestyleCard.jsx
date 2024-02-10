@@ -13,16 +13,12 @@ export default function LifestyleCard({ lifestyle }) {
       </h1>
       <main className="flex w-full flex-wrap items-start justify-center px-10 py-10 max-md:flex-col max-md:px-6">
         {lifestyle.map((lifestyle, index) => (
-          <div
+          <Link
             className="group w-1/3 cursor-pointer rounded px-5 pb-5 max-md:w-full max-md:px-0"
             key={index}
-            // onClick={() =>
-            //   route.push(
-            //     `/lifestyle/${lifestyle?._id}/${lifestyle?.title
-            //       .toLowerCase()
-            //       .replace(/\s+/g, "-")}`
-            //   )
-            // }
+            href={`/lifestyle/${lifestyle?._id}/${lifestyle?.title
+              .toLowerCase()
+              .replace(/\s+/g, "-")}`}
           >
             <div className="group">
               <div className="h-full w-full max-h-[300px] rounded overflow-hidden">
@@ -45,15 +41,10 @@ export default function LifestyleCard({ lifestyle }) {
                     India
                   </span>
                 </div>
-                <Link
-                  href={`/lifestyle/${lifestyle?._id}/${lifestyle?.title
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")}`}
-                >
-                  <span className="line-clamp-2 px-2 font-Gamiliademo text-2xl font-semibold tracking-wider text-black">
-                    {lifestyle?.title}
-                  </span>
-                </Link>
+
+                <span className="line-clamp-2 px-2 font-Gamiliademo text-2xl font-semibold tracking-wider text-black">
+                  {lifestyle?.title}
+                </span>
                 <p className="text-center font-HankenGrotesk my-4 text-base">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Aliquid voluptate, accusamus dignissimos amet dolorem, optio
@@ -67,7 +58,7 @@ export default function LifestyleCard({ lifestyle }) {
                 </span>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </main>
     </>
