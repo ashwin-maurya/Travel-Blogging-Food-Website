@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=CooperHewitt:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Gupter&family=CooperHewitt:wght@300&family=Tinos&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "CooperHewitt";
+  src: url("/fonts/CooperHewitt-Light.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GamiliademoRegular-mL9Ev";
+  src: url("/fonts/GamiliademoRegular-mL9Ev.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HankenGrotesk-VariableFont_wght";
+  src: url("/fonts/HankenGrotesk-VariableFont_wght.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none !important;
+}
+button {
+  outline: none !important;
+  border: none;
+}
+body {
+  overflow-x: hidden;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+}
+.blogContent img {
+  max-width: 100%;
+  width: 100%;
+  min-width: 100%;
+  height: auto;
+}
+.blogContent code,
+p,
+div,
+span,
+li,
+ul,
+ol,
+pre,
+blockquote,
+table,
+td,
+th,
+em,
+strong,
+b,
+i,
+small,
+sub,
+sup,
+strike,
+del,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button,
+textarea,
+input,
+select,
+option,
+fieldset,
+legend,
+label,
+hr,
+figure,
+figcaption,
+form,
+iframe,
+video,
+audio,
+canvas,
+nav,
+header,
+footer,
+section,
+article,
+aside,
+main,
+menu,
+summary,
+details,
+mark,
+time {
+  text-wrap: wrap;
+}
+.slide-animation {
+  animation: slide 12300ms infinite;
+}
+.slide-transition {
+  transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
+  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+}
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.synopsis-text {
+  /* display: inline-block; */
+  /* margin: 0; */
+  /* line-height: 1em; */
+  /* font-family: Helvetica, Arial, sans-serif; */
+  /* font-weight: bold; */
+  /* font-size: 200px; */
+  background: linear-gradient(to right, #070707 58.4%, #ffffff 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@layer components {
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}

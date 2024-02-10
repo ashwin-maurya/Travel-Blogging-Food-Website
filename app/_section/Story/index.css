@@ -1,0 +1,56 @@
+/* index.css or your main styles file */
+@import "swiper/swiper-bundle.min.css";
+
+.story__slider {
+  width: 450px;
+  height: 800px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.story__slide {
+  position: relative;
+}
+.story__slide video,
+.story__slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.story__pagination {
+  bottom: unset !important;
+  top: 8px !important;
+  display: flex;
+  padding: 0 4px;
+}
+.story__pagination .swiper-pagination-bullet {
+  flex-grow: 1;
+  border-radius: 100vh;
+  height: 3px;
+  margin: 0 2px !important;
+  background-color: rgba(247, 247, 245, 0.4);
+  opacity: 1;
+}
+.story__pagination .swiper-pagination-bullet .swiper-pagination-progress {
+  height: 100%;
+  width: 0%;
+  border-radius: 100vh;
+  background-color: #f7f7f5;
+}
+.story__prev,
+.story__next {
+  height: 100%;
+  width: 50%;
+  top: 0;
+  margin-top: 0;
+}
+.story__prev::after,
+.story__next::after {
+  content: none;
+}
+.story__prev {
+  left: 0;
+}
+.story__next {
+  right: 0;
+}

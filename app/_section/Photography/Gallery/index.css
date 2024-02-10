@@ -1,0 +1,27 @@
+@keyframes top-animation {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+.zoom-wrapper__image {
+  -webkit-animation-name: top-animation;
+  animation-name: top-animation;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+
+.custom-img {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.unset-img {
+  width: 100%;
+}
