@@ -1,29 +1,23 @@
 "use client";
 import React, { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { FormatDate } from "@/app/_components/helper/FormatDate";
 export default function Articles({ articles }) {
-  const route = useRouter();
-
   return (
     <>
       {articles.map((article, index) => (
-        <div
+        <Link
           key={index}
-          onClick={() =>
-            route.push(
-              `/articles/${article?._id}/${article.title
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`
-            )
-          }
+          href={`/articles/${article?._id}/${article.title
+            .toLowerCase()
+            .replace(/\s+/g, "-")}`}
           className={`md group mx-14 flex cursor-pointer flex-wrap items-center max-md:mx-5 max-md:mb-5 max-md:flex-col-reverse ${
             index % 2 !== 0 ? "flex-row-reverse " : ""
           }`}
         >
           <div className="w-1/2 bg-white p-10 font-sans max-md:w-full max-md:px-0 max-md:py-5">
             <div className="max-md:mx-4">
-              <h1 className="text-5xl font-Gamiliademo mb-5 font-bold">
+              <h1 className="text-5xl font-Gamiliademo mb-5 text-black font-bold">
                 {article?.title}
               </h1>
               <div className="flex gap-5 my-2 items-center">
@@ -59,7 +53,7 @@ export default function Articles({ articles }) {
               </h1>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </>
   );

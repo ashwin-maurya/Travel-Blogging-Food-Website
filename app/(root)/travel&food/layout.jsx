@@ -1,6 +1,5 @@
-import React from "react";
-import Destiantions from "./@destinations/page";
-import ArticlesR from "./@articles/page";
+import React, { Suspense } from "react";
+
 export const metadata = {
   title: {
     default: "Travel & Food",
@@ -18,13 +17,13 @@ export const metadata = {
   },
   image: "https://nextjs.org/imgs/sticker.png",
 };
-export default function layout({ children }) {
+
+export default function Layout({ children, articles, destinations }) {
   return (
     <main>
       {children}
-
-      {<Destiantions />}
-      {<ArticlesR />}
+      {destinations}
+      {articles}
     </main>
   );
 }

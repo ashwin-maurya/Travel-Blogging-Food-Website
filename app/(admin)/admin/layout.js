@@ -12,7 +12,7 @@ export default function Dashboardlayout({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
-    setLoading(true); // Set loading to true initially
+    setLoading(true);
   }, []);
 
   return (
