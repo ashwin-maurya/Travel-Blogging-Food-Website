@@ -5,9 +5,9 @@ import MainContent from "@/app/_section/Photography/Gallery/MainContent";
 import YoutubeVideos from "@/app/_section/Photography/Videos/YoutubeVideos";
 import { fetchvideos } from "@/lib/actions/youtube.actions";
 export default async function page() {
-  const photos = await fetchgallery();
-  const videos = await fetchvideos();
-
+  const photos = await fetchgallery(1);
+  const videos = await fetchvideos(1);
+  console.log(videos);
   return (
     <div className="">
       <div>
@@ -17,7 +17,7 @@ export default async function page() {
         <MainContent photos={photos} />
       </div>
       <div className="pt-10">
-        <YoutubeVideos videos={videos} />
+        <YoutubeVideos video={videos} />
       </div>
     </div>
   );

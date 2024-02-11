@@ -1,5 +1,4 @@
 "use client";
-"use strict";
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";

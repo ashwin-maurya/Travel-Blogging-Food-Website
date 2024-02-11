@@ -84,7 +84,6 @@ export default function Sidebar() {
               <Link
                 className="my-1 flex cursor-pointer items-center justify-between rounded-lg p-3 font-sans text-base font-semibold uppercase text-gray-300 transition-all duration-200 ease-in-out hover:bg-gray-600 "
                 href={`/admin`}
-                rel="noopener noreferrer"
               >
                 <span className="flex items-center justify-center">
                   <IoHomeOutline
@@ -130,7 +129,6 @@ export default function Sidebar() {
                     <Link
                       key={linkIndex}
                       className="flex items-center rounded-md p-2 font-sans text-sm font-bold text-gray-100 transition-all duration-200 ease-in-out  hover:bg-gray-500"
-                      rel="noopener noreferrer"
                       href={`/admin/${section.name.toLowerCase()}/${
                         section.links[linkIndex]
                       }/`}

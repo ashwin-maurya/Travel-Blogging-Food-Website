@@ -1,5 +1,11 @@
 import React from "react";
 
-export default function loading() {
-  return <div className="text-8xl my-20 mx-auto">Loading.....</div>;
+export default function Loading() {
+  return (
+    <>
+      <div className="flex justify-center items-center w-full my-20">
+        <div className="border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-2 h-10 w-10"></div>
+      </div>
+    </>
+  );
 }

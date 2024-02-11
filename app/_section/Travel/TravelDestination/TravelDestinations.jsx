@@ -6,7 +6,6 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function TravelDestinations({ destinations }) {
   const router = useRouter();
-  console.log("destinations", destinations);
   // Display only the top 6 destinations
   const topDestinations = destinations.slice(0, 6);
 

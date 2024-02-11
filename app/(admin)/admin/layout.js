@@ -29,7 +29,7 @@ export default function Dashboardlayout({ children }) {
             <Sidebar />
           </div>
           <ToastContainer />
-          <div className="mx-auto w-full max-w-screen-xl overflow-y-scroll scroll-smooth pt-5 max-md:pt-5">
+          <div className="mx-auto w-full max-w-screen-xl overflow-y-scroll  pt-5 max-md:pt-5">
             <main>{children}</main>
           </div>
         </>

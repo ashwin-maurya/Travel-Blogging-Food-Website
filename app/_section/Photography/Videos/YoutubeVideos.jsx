@@ -1,8 +1,28 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import YoutubeLazyLoad from "../../Home/YoutubeContent/YoutubeLazyLoad";
+import { fetchvideos } from "@/lib/actions/youtube.actions";
 
-export default function YoutubeVideos({ videos }) {
+export default function YoutubeVideos({ video }) {
+  const [videos, setVideos] = useState(video);
+  const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+
+  const loadMoreVideos = async () => {
+    setLoading(true);
+    const nextPage = page + 1;
+    const additionalVideos = await fetchvideos(nextPage);
+    if (additionalVideos.length === 0) {
+      setHasMore(false);
+    }
+    if (additionalVideos) {
+      setVideos((prevVideos) => [...prevVideos, ...additionalVideos]);
+      setPage(nextPage);
+    }
+    setLoading(false);
+  };
+
   return (
     <>
       <h1 className="relative text-center right-10 mb-10 font-CooperHewitt text-5xl  font-thin max-md:right-0">
@@ -18,6 +38,21 @@ export default function YoutubeVideos({ videos }) {
           </div>
         ))}
       </div>
+
+      {hasMore && (
+        <div className="flex justify-center items-center w-full my-20">
+          {loading ? (
+            <div className="border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-2 h-10 w-10"></div>
+          ) : (
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={loadMoreVideos}
+            >
+              Load More
+            </button>
+          )}
+        </div>
+      )}
     </>
   );
 }

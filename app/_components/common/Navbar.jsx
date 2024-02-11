@@ -1,5 +1,4 @@
 "use client";
-"use strict";
 
 import React, { useState, useEffect, useRef } from "react";
 import { navLinks } from "../constants";

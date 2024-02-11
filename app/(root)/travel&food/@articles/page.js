@@ -1,9 +1,9 @@
 import React from "react";
 import { fetcharticles } from "@/lib/actions/articles.actions";
-import Articles from "@/app/_section/Travel/Articles/Articles";
+import Articles from "./Articles";
 
 export default async function ArticlesR() {
-  const articles = await fetcharticles();
+  const article = await fetcharticles(1);
 
   return (
     <div className=" mt-24">
@@ -11,7 +11,7 @@ export default async function ArticlesR() {
         Reads
       </h1>
       <div className="mx-auto max-w-screen-xl mt-10">
-        <Articles articles={articles} />
+        <Articles article={article} />
       </div>
     </div>
   );

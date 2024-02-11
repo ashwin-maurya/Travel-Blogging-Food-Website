@@ -34,7 +34,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 a {
   text-decoration: none !important;
@@ -46,7 +45,6 @@ button {
 body {
   overflow-x: hidden;
   background-color: #ffffff;
-  scroll-behavior: smooth;
 }
 .blogContent img {
   max-width: 100%;
